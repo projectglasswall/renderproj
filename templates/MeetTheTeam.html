@@ -10,7 +10,10 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('imgs/HomePage.jpg') no-repeat center center fixed;
+            background-image: url("{{ url_for('static', filename='imgs/HomePage.jpg') }}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
             background-size: cover;
             color: #ffffff;
         }
@@ -104,14 +107,14 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="./home.html">Home</a>
-        <a href="./MeetTheTeam.html">Meet The Team</a>
-        <a href="./aboutargos.html">About Argos</a>
-        <a href="./liveinaction.html">Live In Action</a>
-        <a href="./behindthescenes.html">Behind The Scenes</a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('meettheteam') }}">Meet The Team</a>
+        <a href="{{ url_for('aboutargos') }}">About Argos</a>
+        <a href="{{ url_for('liveinaction') }}">Live In Action</a>
+        <a href="{{ url_for('behindthescenes') }}">Behind The Scenes</a>
     </div>
 <header>
-    <img src="imgs/MEETTHETEAM.png" alt="Meet The Team Header" class="header-image">
+    <img src="{{ url_for('static', filename='imgs/meettheteam.png') }}" alt="Meet The Team Header" class="header-image">
 </header>
 
 <main>
@@ -119,41 +122,41 @@
         <h2>Team Members</h2>
         
         <div class="team-member">
-            <img src="imgs/RebekahHeadshot.png" alt="Rebekah Robinson">
+            <img src="{{ url_for('static', filename='imgs/RebekahHeadshot.png') }}" alt="Rebekah Robinson">
             <div>
-                <h3><a href="https://www.linkedin.com/in/rebekah-robinson26/">Rebekah Robinson <img src="imgs/linkedin.png" alt="LinkedIn"></a></h3>
+                <h3><a href="https://www.linkedin.com/in/rebekah-robinson26/">Rebekah Robinson <img src="{{ url_for('static', filename='imgs/linkedin.png') }}" alt="LinkedIn"></a></h3>
                 <p>Honors Computer Science Student at North Carolina Agricultural and Technical State University</p>
             </div>
         </div>
 
         <div class="team-member">
-            <img src="imgs/ChanningHeadshot.JPG" alt="Channing Barnes">
+            <img src="{{ url_for('static', filename='imgs/ChanningHeadshot.JPG') }}" alt="Channing Barnes">
             <div>
-                <h3><a href="https://www.linkedin.com/in/channing-barnes/">Channing Barnes <img src="imgs/linkedin.png" alt="LinkedIn"></a></h3>
+                <h3><a href="https://www.linkedin.com/in/channing-barnes/">Channing Barnes <img src="{{ url_for('static', filename='imgs/linkedin.png') }}" alt="LinkedIn"></a></h3>
                 <p>Computer Science Student at North Carolina Agricultural and Technical State University</p>
             </div>
         </div>
 
         <div class="team-member">
-            <img src="imgs/CalebHeadshot.jpg" alt="Caleb Boyce">
+            <img src="{{ url_for('static', filename='imgs/CalebHeadshot.jpg') }}" alt="Caleb Boyce">
             <div>
-                <h3><a href="https://www.linkedin.com/in/caleb-boyce/">Caleb Boyce <img src="imgs/linkedin.png" alt="LinkedIn"></a></h3>
+                <h3><a href="https://www.linkedin.com/in/caleb-boyce/">Caleb Boyce <img src="{{ url_for('static', filename='imgs/linkedin.png') }}" alt="LinkedIn"></a></h3>
                 <p>Computer Science Student at North Carolina Agricultural and Technical State University</p>
             </div>
         </div>
 
         <div class="team-member">
-            <img src="imgs/IzaiahHeadshot.png" alt="Izaiah Exum">
+            <img src="{{ url_for('static', filename='imgs/IzaiahHeadshot.png') }}" alt="Izaiah Exum">
             <div>
-                <h3><a href="https://www.linkedin.com/in/izaiahexum/">Izaiah Exum <img src="imgs/linkedin.png" alt="LinkedIn"></a></h3>
+                <h3><a href="https://www.linkedin.com/in/izaiahexum/">Izaiah Exum <img src="{{ url_for('static', filename='imgs/linkedin.png') }}" alt="LinkedIn"></a></h3>
                 <p>Computer Science & Physics Student at North Carolina Agricultural and Technical State University</p>
             </div>
         </div>
 
         <div class="team-member">
-            <img src="imgs/BryceHeadshot.jpeg" alt="Bryce Benson">
+            <img src="{{ url_for('static', filename='imgs/BryceHeadshot.jpeg') }}" alt="Bryce Benson">
             <div>
-                <h3><a href="https://www.linkedin.com/in/bryce-benson-4023aa226/">Bryce Benson <img src="imgs/linkedin.png" alt="LinkedIn"></a></h3>
+                <h3><a href="https://www.linkedin.com/in/bryce-benson-4023aa226/">Bryce Benson <img src=="{{ url_for('static', filename='imgs/linkedin.png') }}" alt="LinkedIn"></a></h3>
                 <p>Computer Science Student at North Carolina Agricultural and Technical State University</p>
             </div>
         </div>

@@ -80,11 +80,10 @@
 <body>
 
     <div class="navbar">
-        <a href="./MeetTheTeam.html" target="_self">Meet The Team</a>
-        <a href="./aboutargos.html" target="_self">About Argos</a>
-        <a href="./liveinaction.html" target="_self">Live In Action </a>
-        <a href="./behindthescenes.html" target="_self">Behind The Scenes </a>
-       
+        <a href="{{ url_for('meettheteam') }}">Meet The Team</a>
+        <a href="{{ url_for('aboutargos') }}">About Argos</a>
+        <a href="{{ url_for('liveinaction') }}">Live In Action</a>
+        <a href="{{ url_for('behindthescenes') }}">Behind The Scenes</a>
     </div>
 
     <div class="content">
