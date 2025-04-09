@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,30 +28,27 @@
 <body>
     <h1>ARGOS Live Object Detection</h1>
 
-    <!-- Removed the <video> tag -->
     <canvas id="canvas" width="640" height="480" class="hidden"></canvas>
     <br>
-    <img id="result" alt="Detected Frame" src="/static/imgs/test.png" />
-
+    <img id="result" alt="Detected Frame" src="" />
 
     <script>
         const canvas = document.getElementById("canvas");
         const resultImg = document.getElementById("result");
         const ctx = canvas.getContext("2d");
-        let videoStream;
 
         async function startWebcam() {
             try {
-                videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
                 const video = document.createElement("video");
-                video.srcObject = videoStream;
+                video.srcObject = stream;
                 video.play();
 
                 video.addEventListener("loadeddata", () => {
                     setInterval(() => {
                         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
                         sendFrame();
-                    }, 1000);
+                    }, 1500);
                 });
             } catch (err) {
                 alert("Error accessing webcam: " + err);
@@ -72,7 +70,7 @@
                 const imageUrl = URL.createObjectURL(resultBlob);
                 resultImg.src = imageUrl;
             } catch (err) {
-                console.error("Error sending frame:", err);
+                console.error("🔥 ERROR sending frame:", err);
             }
         }
 

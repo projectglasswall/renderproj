@@ -1,17 +1,17 @@
+
 from flask import Flask, render_template, request, send_file
 import cv2
 import numpy as np
-from ultralytics import YOLO
 import io
+from ultralytics import YOLO
 
 app = Flask(__name__)
-model = YOLO("yolov10n.pt")  # make sure this file is in your project root
+model = YOLO("yolov10n.pt")
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/detect", methods=["POST"])
 @app.route("/detect", methods=["POST"])
 def detect():
     try:
@@ -25,12 +25,6 @@ def detect():
         np_img = np.frombuffer(in_memory.getvalue(), np.uint8)
         frame = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
 
-        # Check if YOLO model exists
-        if model is None:
-            print("❌ YOLO model not loaded")
-            return "Model not loaded", 500
-
-        # Run YOLO detection
         results = model(frame)
 
         for result in results:
@@ -48,7 +42,6 @@ def detect():
     except Exception as e:
         print(f"❌ Exception during detection: {e}")
         return "Detection failed", 500
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
